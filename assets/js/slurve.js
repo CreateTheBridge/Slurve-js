@@ -125,8 +125,11 @@
         pointsStr = trace(extractedPoints, bounds),
         svgClasses =  $el.attributes['data-slurve-classes'];
         polyId = $el.attributes['data-slurve-path-id'];
-        
-    poly.setAttribute('id', polyId);
+    
+    if (polyId) {
+      poly.setAttribute('id', polyId.value);  
+    }
+    
     //attrs
     svg.setAttribute('class', svgClasses ? 'slurve-svg ' + svgClasses.value : 'slurve-svg');
     svg.setAttribute('top', viewBox.y + 'px');

@@ -124,7 +124,9 @@
         viewBox = getViewBox(extractedPoints, width, height),
         pointsStr = trace(extractedPoints, bounds),
         svgClasses =  $el.attributes['data-slurve-classes'];
-
+        polyId = $el.attributes['data-slurve-path-id'];
+        
+    poly.setAttribute('id', polyId);
     //attrs
     svg.setAttribute('class', svgClasses ? 'slurve-svg ' + svgClasses.value : 'slurve-svg');
     svg.setAttribute('top', viewBox.y + 'px');
